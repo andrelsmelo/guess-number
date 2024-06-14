@@ -66,6 +66,7 @@ const Game = () => {
         setTargetNumber(0);
         setAttempts(0);
         setGameLost(false);
+        setWinnerWinnerChickenDinner(false);
     };
 
     return (
@@ -79,7 +80,6 @@ const Game = () => {
                         <div className='flex flex-col justify-center items-center'>
                             <h2 className="text-3xl">{message} O número era {targetNumber}</h2>
                             <div className='flex'>
-                                <div className="tenor-gif-embed" data-postid="15574463062019791958" data-share-method="host" data-aspect-ratio="1" data-width="600px"><a href="https://tenor.com/view/gold-winner-victory-penguin-goat-gif-15574463062019791958">Gold Winner Sticker</a>from <a href="https://tenor.com/search/gold-stickers">Gold Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                                 <div className="tenor-gif-embed" data-postid="20285627" data-share-method="host" data-aspect-ratio="1.77778" data-width="600px"><a href="https://tenor.com/view/yba-winning-comp-sbr-winning-sbr-gif-20285627">Yba Winning Comp Sbr Sticker</a>from <a href="https://tenor.com/search/yba-stickers">Yba Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                             </div>
 
