@@ -69,6 +69,7 @@ const Game = () => {
 
     return (
         <div className="flex flex-col items-center justify-evenly min-h-screen bg-black text-white">
+            <h1 className="text-5xl">Acerte o número entre 1 a 100</h1>
             {!difficulty ? (
                 <DifficultySelection startGame={startGame} />
             ) : (
