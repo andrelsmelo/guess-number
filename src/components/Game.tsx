@@ -15,6 +15,7 @@ const Game = () => {
     const [targetNumber, setTargetNumber] = useState<number>(0);
     const [attempts, setAttempts] = useState<number>(0);
     const [gameLost, setGameLost] = useState<boolean>(false);
+    const [winnerWinnerChickenDinner, setWinnerWinnerChickenDinner] = useState<boolean>(false);
 
     const startGame = (selectedDifficulty: string) => {
         const rounds = {
@@ -42,9 +43,9 @@ const Game = () => {
         }
 
         setAttempts(prev => prev + 1);
-
         if (guessInt === targetNumber) {
             setMessage(GameMessages.Parabens);
+            setWinnerWinnerChickenDinner(true);
         } else if (attempts + 1 >= chances) {
             setMessage(`${GameMessages.Perdeu} ${targetNumber}`);
             setGameLost(true);
@@ -73,19 +74,31 @@ const Game = () => {
             {!difficulty ? (
                 <DifficultySelection startGame={startGame} />
             ) : (
-                <div className='flex flex-col items-center justify-center'>
-                    <Gameplay
-                        attempts={attempts}
-                        chances={chances}
-                        guess={guess}
-                        message={message}
-                        handleGuess={handleGuess}
-                        setGuess={setGuess}
-                        gameLost={gameLost}
-                        messageHandler={messageHandler}
-                    />
-                    <Button variant="primary" className="mt-4" onClick={resetGame}>Reiniciar Jogo</Button>
-                </div>
+                <>
+                    {winnerWinnerChickenDinner && (
+                        <div className='flex flex-col justify-center items-center'>
+                            <h2 className="text-3xl">{message} O número era {targetNumber}</h2>
+                            <div className='flex'>
+                                <div className="tenor-gif-embed" data-postid="15574463062019791958" data-share-method="host" data-aspect-ratio="1" data-width="600px"><a href="https://tenor.com/view/gold-winner-victory-penguin-goat-gif-15574463062019791958">Gold Winner Sticker</a>from <a href="https://tenor.com/search/gold-stickers">Gold Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                                <div className="tenor-gif-embed" data-postid="20285627" data-share-method="host" data-aspect-ratio="1.77778" data-width="600px"><a href="https://tenor.com/view/yba-winning-comp-sbr-winning-sbr-gif-20285627">Yba Winning Comp Sbr Sticker</a>from <a href="https://tenor.com/search/yba-stickers">Yba Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                            </div>
+
+                        </div>
+                    )}
+                    <div className='flex flex-col items-center justify-center'>
+                        <Gameplay
+                            attempts={attempts}
+                            chances={chances}
+                            guess={guess}
+                            message={message}
+                            handleGuess={handleGuess}
+                            setGuess={setGuess}
+                            gameLost={gameLost}
+                            messageHandler={messageHandler}
+                        />
+                        <Button variant="primary" className="mt-4" onClick={resetGame}>Reiniciar Jogo</Button>
+                    </div>
+                </>
             )}
         </div>
     );
