@@ -9,7 +9,6 @@ const Never = () => {
 
     const videoLinks = [
         "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
-        "https://www.youtube.com/embed/Cf97SV0zMi?autoplay=1&t=50",
     ];
 
     const getRandomVideo = () => {
