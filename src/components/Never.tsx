@@ -9,6 +9,7 @@ const Never = () => {
 
     const videoLinks = [
         "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
+        "https://www.youtube.com/embed/iSGO--JdAUA?si=Y7DmKXxq33IZN5cu?autoplay=1",
         "https://www.youtube.com/embed/cZz1oamNbng?autoplay=1",
         "https://www.youtube.com/embed/lu60aeS8HME?autoplay=1",
         "https://www.youtube.com/embed/KnHmoA6Op1o?autoplay=1",
