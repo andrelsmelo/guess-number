@@ -76,7 +76,7 @@ const Gameplay: FC<Props> = ({ attempts, chances, guess, message, gameLost, hand
                 </>
             ) : (
                 <>
-                    <div className='flex justify-around'>
+                    <div className='flex justify-around w-screen'>
                         <div className="tenor-gif-embed" data-postid="13030363029827742033" data-share-method="host" data-aspect-ratio="1" data-width="600px"><a href="https://tenor.com/view/despair-gif-13030363029827742033">Despair Sticker</a>from <a href="https://tenor.com/search/despair-stickers">Despair Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                         <div className="tenor-gif-embed" data-postid="24691555" data-share-method="host" data-aspect-ratio="1" data-width="600px"><a href="https://tenor.com/view/xqc-despair-xqcdespair-voidge-troll-gif-24691555">Xqc Despair GIF</a>from <a href="https://tenor.com/search/xqc-gifs">Xqc GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                     </div>

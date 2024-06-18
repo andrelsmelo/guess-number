@@ -70,8 +70,8 @@ const Game = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-evenly min-h-screen bg-black text-white">
-            <h1 className="text-5xl">Acerte o número entre 1 a 100</h1>
+        <div className="flex flex-col items-center justify-start gap-16 pt-48 md:justify-evenly min-h-screen bg-black text-white">
+            {!gameLost && <h1 className="text-5xl text-center">Acerte o número entre 1 a 100</h1>}
             {!difficulty ? (
                 <DifficultySelection startGame={startGame} />
             ) : (
@@ -79,7 +79,7 @@ const Game = () => {
                     {winnerWinnerChickenDinner && (
                         <div className='flex flex-col justify-center items-center'>
                             <h2 className="text-3xl">{message} O número era {targetNumber}</h2>
-                            <div className='flex'>
+                            <div className='flex w-screen justify-center items-center'>
                                 <div className="tenor-gif-embed" data-postid="20285627" data-share-method="host" data-aspect-ratio="1.77778" data-width="600px"><a href="https://tenor.com/view/yba-winning-comp-sbr-winning-sbr-gif-20285627">Yba Winning Comp Sbr Sticker</a>from <a href="https://tenor.com/search/yba-stickers">Yba Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                             </div>
 
