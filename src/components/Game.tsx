@@ -35,6 +35,9 @@ const Game = () => {
                 textAlign: 'center',
             }
         });
+        const loggedUser = sessionStorage.getItem('username');
+
+        if (loggedUser) return;
 
         toast.success('Faça login para aparecer no painel de Ranking!', {
             position: "bottom-right",
