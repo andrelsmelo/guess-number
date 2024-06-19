@@ -5,7 +5,7 @@ import { sql } from '@vercel/postgres'
 const validateUser = (username: string) => {
   if (!username || username.length !== 5) {
     return {
-      error: 'Usuario inválido, o mesmo deve ter 5 letras.',
+      error: 'Nick invalido, o mesmo deve ter 5 letras.',
     }
   }
   return null
@@ -16,7 +16,7 @@ export async function createUser(data: { username: string }) {
 
   const validationError = validateUser(username)
   if (validationError) {
-    return { status: 400, ...validationError }
+    return { status: 403, ...validationError }
   }
 
   try {
