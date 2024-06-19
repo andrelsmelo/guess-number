@@ -7,6 +7,7 @@ import Button from './Button'
 import { GameMessages } from '@/utils/messages'
 import { sendScore } from '@/utils/api'
 import { Bounce, toast } from 'react-toastify'
+import Link from 'next/link'
 
 const Game = () => {
   const [difficulty, setDifficulty] = useState<string>('')
@@ -135,7 +136,10 @@ const Game = () => {
           {winnerWinnerChickenDinner ? (
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-3xl">
-                {message} O número era {targetNumber}
+                {message} O número era {targetNumber}{' '}
+                <Link href="/xablau" className="opacity-10">
+                  <span className="text-[8px] text-white">segredo</span>
+                </Link>
               </h2>
               <div className="flex w-screen justify-center items-center">
                 <div
