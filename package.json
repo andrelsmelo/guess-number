@@ -38,8 +38,11 @@
   "eslintConfig": {
     "extends": [
       "next/core-web-vitals",
-      "prettier",
-      "@rocketseat/eslint-config/react"
+      "prettier"
     ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
