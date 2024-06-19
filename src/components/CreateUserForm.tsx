@@ -24,7 +24,6 @@ const CreateUserForm = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "colored",
         transition: Bounce,
         icon: false
       });

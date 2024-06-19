@@ -45,7 +45,6 @@ const Gameplay: FC<Props> = ({ attempts, chances, guess, message, gameLost, hand
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "colored",
             transition: Bounce,
             icon: false
         });
