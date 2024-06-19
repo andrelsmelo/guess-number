@@ -41,11 +41,24 @@ export async function sendScore(user: string, difficulty: string) {
       return { status: 404, error: 'Usuário não encontrado.' };
     }
 
+    const difficultyMultipliers: { [key: string]: number } = {
+      'i': 100,
+      'p': 50,
+      'd': 25,
+      'm': 10,
+      'f': 5,
+    };
+
+    const multiplier = difficultyMultipliers[difficulty];
+    if (!multiplier) {
+      return { status: 400, error: 'Dificuldade inválida.' };
+    }
+
     const scoreResult = await sql`SELECT * FROM ranking WHERE username = ${user} and difficulty = ${difficulty}`;
     if (scoreResult.rows.length === 0) {
-      await sql`INSERT INTO ranking (username, score, difficulty) VALUES (${user}, 1, ${difficulty})`;
+      await sql`INSERT INTO ranking (username, score, difficulty) VALUES (${user}, ${multiplier}, ${difficulty})`;
     } else {
-      await sql`UPDATE ranking SET score = score + 1 WHERE username = ${user} and difficulty = ${difficulty}`;
+      await sql`UPDATE ranking SET score = score + ${multiplier} WHERE username = ${user} and difficulty = ${difficulty}`;
     }
 
     return { status: 200, message: 'Pontuação enviada com sucesso.' };
