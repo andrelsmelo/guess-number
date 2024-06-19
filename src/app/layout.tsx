@@ -8,7 +8,7 @@ const acme = Acme({ weight: ["400"], subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "?",
-  description: "Site de Adivinhação de Números",
+  description: "Guess Number",
 };
 
 export default function RootLayout({
