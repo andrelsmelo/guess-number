@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DifficultySelection from '@/components/DifficultySelection';
 import Gameplay from '@/components/Gameplay';
 import Button from './Button';
 import { GameMessages } from '@/utils/messages';
 import { sendScore } from '@/utils/api';
+import { Bounce, toast } from 'react-toastify';
 
 const Game = () => {
     const [difficulty, setDifficulty] = useState<string>('');
@@ -17,12 +18,52 @@ const Game = () => {
     const [gameLost, setGameLost] = useState<boolean>(false);
     const [winnerWinnerChickenDinner, setWinnerWinnerChickenDinner] = useState<boolean>(false);
 
+    useEffect(() => {
+        toast.info('O JOGO', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            transition: Bounce,
+            icon: false,
+            style: {
+                backgroundColor: '#000',
+                color: '#fff',
+                textAlign: 'center',
+            }
+        });
+
+        toast.success('Faça login para aparecer no painel de Ranking!', {
+            position: "bottom-right",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            transition: Bounce,
+            icon: false,
+            style: {
+                marginBottom: '20px',
+                backgroundColor: '#38A169',
+                color: '#fff',
+            },
+            onClick: () => {
+                window.location.href = '/login';
+            }
+        });
+    }, [])
+
     const startGame = (selectedDifficulty: string) => {
         const rounds = {
-            'f': 20,
-            'm': 15,
-            'd': 10,
-            'i': 7
+            'f': 15,
+            'm': 12,
+            'd': 7,
+            'p': 3,
+            'i': 1
         }[selectedDifficulty];
 
         if (rounds) {
@@ -94,19 +135,19 @@ const Game = () => {
                             </div>
                         </div>
                     ) : (
-                    <div className='flex flex-col items-center justify-center'>
-                        <Gameplay
-                            attempts={attempts}
-                            chances={chances}
-                            guess={guess}
-                            message={message}
-                            handleGuess={handleGuess}
-                            setGuess={setGuess}
-                            gameLost={gameLost}
-                            messageHandler={messageHandler}
-                        />
-                        <Button variant="primary" className="mt-4" onClick={resetGame}>Reiniciar Jogo</Button>
-                    </div>
+                        <div className='flex flex-col items-center justify-center'>
+                            <Gameplay
+                                attempts={attempts}
+                                chances={chances}
+                                guess={guess}
+                                message={message}
+                                handleGuess={handleGuess}
+                                setGuess={setGuess}
+                                gameLost={gameLost}
+                                messageHandler={messageHandler}
+                            />
+                            <Button variant="primary" className="mt-4" onClick={resetGame}>Reiniciar Jogo</Button>
+                        </div>
                     )}
                 </>
             )}
