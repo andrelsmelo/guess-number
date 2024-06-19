@@ -125,7 +125,6 @@ const Game = () => {
     setGameLost(false)
     setWinnerWinnerChickenDinner(false)
   }
-  console.log(targetNumber)
 
   return (
     <div className="flex flex-col items-center justify-start gap-16 pt-48 md:pt-0 md:justify-evenly min-h-screen bg-black text-white">
