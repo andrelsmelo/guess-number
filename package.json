@@ -37,7 +37,10 @@
     "extends": [
       "next/core-web-vitals",
       "prettier"
-    ]
+    ],
+    "rules": {
+      "no-console": "error"
+    }
   },
   "prettier": {
     "semi": false,
