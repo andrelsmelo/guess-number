@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -6,6 +5,7 @@ import DifficultySelection from '@/components/DifficultySelection';
 import Gameplay from '@/components/Gameplay';
 import Button from './Button';
 import { GameMessages } from '@/utils/messages';
+import { sendScore } from '@/utils/api';
 
 const Game = () => {
     const [difficulty, setDifficulty] = useState<string>('');
@@ -35,6 +35,10 @@ const Game = () => {
         }
     };
 
+    const handleSendScore = async (user: string, difficulty: string) => {
+        await sendScore(user, difficulty);
+    }
+
     const handleGuess = () => {
         const guessInt = parseInt(guess);
         setGuess('');
@@ -48,6 +52,11 @@ const Game = () => {
         if (guessInt === targetNumber) {
             setMessage(GameMessages.Parabens);
             setWinnerWinnerChickenDinner(true);
+            const usuarioLogado = sessionStorage.getItem('username');
+            if (usuarioLogado) {
+                handleSendScore(usuarioLogado, difficulty);
+            }
+
         } else if (attempts + 1 >= chances) {
             setMessage(`${GameMessages.Perdeu} ${targetNumber}`);
             setGameLost(true);
