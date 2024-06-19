@@ -30,7 +30,7 @@ const Never = () => {
 
     return (
         <main className="relative">
-            <Button variant="secondary" className="fixed text-[10px] right-0 top-0" onClick={handleClick}>
+            <Button variant="secondary" className="fixed right-0 top-0 bg-transparent hover:bg-transparent hover:scale-125" onClick={handleClick}>
                 ?
             </Button>
             {iframe && (

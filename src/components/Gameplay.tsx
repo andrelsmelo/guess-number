@@ -61,9 +61,11 @@ const Gameplay: FC<Props> = ({ attempts, chances, guess, message, gameLost, hand
     return (
         <div className="text-center">
             {!gameLost ? (
-                <>
-                    <p className="text-xl">Rodada: {attempts + 1}</p>
-                    <p className="text-xl">Chances restantes: {chances - attempts}</p>
+                <div className='flex flex-col gap-8 md:gap-16'>
+                    <h1 className="text-5xl text-center">Acerte o número entre 1 a 100</h1>
+                    <p className="text-3xl">Rodada: {attempts + 1}</p>
+                    <p className="text-2xl">Chances restantes: {chances - attempts}</p>
+                    <div>
                     <input
                         type="text"
                         value={guess}
@@ -71,9 +73,13 @@ const Gameplay: FC<Props> = ({ attempts, chances, guess, message, gameLost, hand
                         onKeyDown={handleKeyPress}
                         className="text-black px-4 py-2 mt-4 rounded-s-lg"
                         placeholder="Digite seu chute"
+                        maxLength={3}
+                        max={100}
+                        min={1}
                     />
                     <Button variant="primary" className="rounded-s-none rounded-e-lg" onClick={handleGuess}>Enviar</Button>
-                </>
+                    </div>
+                </div>
             ) : (
                 <>
                     <div className='flex justify-around w-screen'>

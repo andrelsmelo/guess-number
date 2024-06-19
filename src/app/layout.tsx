@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Acme } from "next/font/google";
 import "./globals.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const acme = Acme({ weight: ["400"], subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "?",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={acme.className}>
         <ToastContainer />
         {children}
       </body>
