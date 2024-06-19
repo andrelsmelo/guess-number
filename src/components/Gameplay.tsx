@@ -12,6 +12,7 @@ interface Props {
   handleGuess: () => void
   setGuess: Dispatch<SetStateAction<string>>
   messageHandler: (message: string) => void
+  resetGameHandler: () => void
 }
 
 const Gameplay: FC<Props> = ({
@@ -23,6 +24,7 @@ const Gameplay: FC<Props> = ({
   handleGuess,
   setGuess,
   messageHandler,
+  resetGameHandler,
 }) => {
   const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
