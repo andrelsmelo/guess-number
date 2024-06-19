@@ -13,6 +13,20 @@ const CreateUserForm = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
+    if (username.length !== 5) {
+      toast.error('Nick inválido, o mesmo deve ter exatamente 5 letras.', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Bounce,
+      })
+      return
+    }
+
     const response = await createUser({ username })
 
     if (response.status === 200 || response.status === 201) {
@@ -30,6 +44,28 @@ const CreateUserForm = () => {
 
       sessionStorage.setItem('username', username)
       router.push('/')
+    } else if (response.status === 400) {
+      toast.error('Aconteceu um erro ao logar :(', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Bounce,
+      })
+    } else if (response.status === 403) {
+      toast.error('Nick inválido, o mesmo deve ter 5 letras.', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Bounce,
+      })
     }
   }
 
@@ -41,6 +77,8 @@ const CreateUserForm = () => {
         onChange={(e) => setUsername(e.target.value)}
         className="text-black px-4 py-2 mt-4 rounded-s-lg"
         placeholder="Nick"
+        maxLength={5}
+        minLength={5}
         required
       />
       <Button
