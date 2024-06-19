@@ -37,6 +37,7 @@ const Game = () => {
 
     const handleGuess = () => {
         const guessInt = parseInt(guess);
+        setGuess('');
 
         if (isNaN(guessInt) || guessInt < 1 || guessInt > 100) {
             setMessage(GameMessages.Invalido);
