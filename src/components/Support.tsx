@@ -93,7 +93,7 @@ const SupportButton: React.FC = () => {
               <Button
                 variant="black"
                 onClick={() => handleMessageClick(message)}
-                className="text-white p-2 rounded w-full text-left"
+                className="p-2 rounded w-full"
               >
                 {message.text}
               </Button>
