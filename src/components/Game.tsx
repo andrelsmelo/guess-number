@@ -25,7 +25,7 @@ const Game = () => {
       'No dia 1º de cada mês, o primeiro colocado receberá uma premiação em PIX equivalente à quantidade de pontos convertida de pesos chilenos 🇨🇱 para reais. 💸🤑💰',
       {
         position: 'bottom-center',
-        autoClose: false,
+        autoClose: 10000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -37,7 +37,7 @@ const Game = () => {
           backgroundColor: '#000',
           color: '#fff',
           textAlign: 'center',
-          marginBottom: '60px',
+          marginBottom: '85px',
         },
       },
     )
