@@ -120,6 +120,7 @@ const Gameplay: FC<Props> = ({
         </div>
       ) : (
         <>
+          <h1>{message}</h1>
           <div className="flex justify-around w-screen">
             <div
               className="tenor-gif-embed"
