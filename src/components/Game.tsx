@@ -24,7 +24,7 @@ const Game = () => {
     toast.info(
       'No dia 1º de cada mês, o primeiro colocado receberá uma premiação em PIX equivalente à quantidade de pontos convertida de pesos chilenos 🇨🇱 para reais. 💸🤑💰',
       {
-        position: 'bottom-left',
+        position: 'bottom-center',
         autoClose: false,
         hideProgressBar: true,
         closeOnClick: true,
