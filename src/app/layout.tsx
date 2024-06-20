@@ -4,7 +4,6 @@ import './globals.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SupportButton from '@/components/Support'
-import '@fortawesome/fontawesome-free/css/all.min.css'
 import Footer from '@/components/Footer'
 
 const acme = Acme({ weight: ['400'], subsets: ['latin'] })
