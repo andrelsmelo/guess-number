@@ -1,4 +1,11 @@
-import { Dispatch, FC, SetStateAction, KeyboardEvent, useEffect } from 'react'
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  KeyboardEvent,
+  useEffect,
+  useState,
+} from 'react'
 import Button from './Button'
 import { GameMessages } from '@/utils/messages'
 import { Bounce, toast } from 'react-toastify'
@@ -26,10 +33,18 @@ const Gameplay: FC<Props> = ({
   messageHandler,
   resetGameHandler,
 }) => {
+  const [history, setHistory] = useState<string[]>([])
+
   const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       handleGuess()
+      setHistory((prevHistory) => [...prevHistory, guess])
     }
+  }
+
+  const handleGuessClick = () => {
+    handleGuess()
+    setHistory((prevHistory) => [...prevHistory, guess])
   }
 
   const showMessageToast = (message: string) => {
@@ -94,10 +109,13 @@ const Gameplay: FC<Props> = ({
             <Button
               variant="primary"
               className="rounded-s-none rounded-e-lg"
-              onClick={handleGuess}
+              onClick={handleGuessClick}
             >
               Enviar
             </Button>
+          </div>
+          <div className="text-xl mt-4">
+            <span>Histórico de tentativas: {history.join(', ')}</span>
           </div>
         </div>
       ) : (
