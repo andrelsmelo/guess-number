@@ -4,6 +4,8 @@ import './globals.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SupportButton from '@/components/Support'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import Footer from '@/components/Footer'
 
 const acme = Acme({ weight: ['400'], subsets: ['latin'] })
 
@@ -19,10 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={acme.className}>
+      <body className={`${acme.className} bg-black text-white`}>
         <ToastContainer />
         {children}
         <SupportButton />
+        <Footer />
       </body>
     </html>
   )

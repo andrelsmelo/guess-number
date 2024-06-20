@@ -37,6 +37,7 @@ const Game = () => {
           backgroundColor: '#000',
           color: '#fff',
           textAlign: 'center',
+          marginBottom: '60px',
         },
       },
     )
