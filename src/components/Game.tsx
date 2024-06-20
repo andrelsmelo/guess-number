@@ -45,25 +45,28 @@ const Game = () => {
 
     if (loggedUser) return
 
-    toast.success('Faça login para aparecer no painel de Ranking!', {
-      position: 'bottom-right',
-      autoClose: false,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      transition: Bounce,
-      icon: false,
-      style: {
-        marginBottom: '20px',
-        backgroundColor: '#38A169',
-        color: '#fff',
+    toast.success(
+      'Faça login para aparecer no painel de classificação e concorrer ao prêmio mensal em PIX!',
+      {
+        position: 'bottom-right',
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Bounce,
+        icon: false,
+        style: {
+          marginBottom: '20px',
+          backgroundColor: '#38A169',
+          color: '#fff',
+        },
+        onClick: () => {
+          window.location.href = '/login'
+        },
       },
-      onClick: () => {
-        window.location.href = '/login'
-      },
-    })
+    )
   }, [])
 
   const startGame = (selectedDifficulty: string) => {
