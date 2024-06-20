@@ -11,8 +11,8 @@ const validateUser = (username: string) => {
   return null
 }
 
-export async function createUser(data: { username: string }) {
-  const { username } = data
+export async function createUser(data: { username: string; pix: string }) {
+  const { username, pix } = data
 
   const validationError = validateUser(username)
   if (validationError) {
@@ -26,7 +26,7 @@ export async function createUser(data: { username: string }) {
       return { status: 201, error: 'Usuário já existe.' }
     }
 
-    await sql`INSERT INTO users (username) VALUES (${username})`
+    await sql`INSERT INTO users (username, pix) VALUES (${username}, ${pix})`
     return { status: 200, message: 'Usuário criado com sucesso.' }
   } catch (error) {
     return { status: 400, error: 'An error occurred while creating the user.' }

@@ -21,22 +21,25 @@ const Game = () => {
     useState<boolean>(false)
 
   useEffect(() => {
-    toast.info('O JOGO', {
-      position: 'top-center',
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      transition: Bounce,
-      icon: false,
-      style: {
-        backgroundColor: '#000',
-        color: '#fff',
-        textAlign: 'center',
+    toast.info(
+      'No dia 1º de cada mês, o primeiro colocado receberá uma premiação em PIX equivalente à quantidade de pontos convertida de pesos chilenos 🇨🇱 para reais. 💸🤑💰',
+      {
+        position: 'bottom-left',
+        autoClose: false,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Bounce,
+        icon: false,
+        style: {
+          backgroundColor: '#000',
+          color: '#fff',
+          textAlign: 'center',
+        },
       },
-    })
+    )
     const loggedUser = sessionStorage.getItem('username')
 
     if (loggedUser) return

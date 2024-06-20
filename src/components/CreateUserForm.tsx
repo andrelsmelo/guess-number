@@ -8,6 +8,7 @@ import { Bounce, toast } from 'react-toastify'
 
 const CreateUserForm = () => {
   const [username, setUsername] = useState('')
+  const [pix, setPix] = useState('')
   const router = useRouter()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +28,7 @@ const CreateUserForm = () => {
       return
     }
 
-    const response = await createUser({ username })
+    const response = await createUser({ username, pix })
 
     if (response.status === 200 || response.status === 201) {
       toast.success('Usuário logado com sucesso!', {
@@ -75,16 +76,23 @@ const CreateUserForm = () => {
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="text-black px-4 py-2 mt-4 rounded-s-lg"
-        placeholder="Nick"
+        className="text-black px-4 py-2 mt-4 rounded-s-lg border"
+        placeholder="Nick *"
         maxLength={5}
         minLength={5}
         required
       />
+      <input
+        type="text"
+        value={pix}
+        onChange={(e) => setPix(e.target.value)}
+        className="text-black px-4 py-2 mt-4 border"
+        placeholder="Pix"
+      />
       <Button
         type="submit"
         variant="success"
-        className="rounded-s-none rounded-e-lg"
+        className="rounded-s-none rounded-e-lg border border-green-600"
       >
         Entrar
       </Button>
