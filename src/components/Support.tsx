@@ -27,6 +27,12 @@ const messages: Message[] = [
     response:
       'Oi André, estava jogando seu jogo e tive uma dúvida sobre as regras, pode me ajudar?',
   },
+  {
+    id: 4,
+    text: 'Tenho uma sugestão',
+    response:
+      'Oi André, estava jogando seu jogo e tenho uma sugestão, pode me ouvir?',
+  },
 ]
 
 const SupportButton: React.FC = () => {
