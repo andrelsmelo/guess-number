@@ -13,9 +13,9 @@ const DifficultySelection: FC<Props> = ({ startGame }) => {
         <h4>Pontuações de Ranking</h4>
         <span className="text-xs">Fácil: 5 pontos</span>
         <span className="text-xs">Médio: 10 pontos</span>
-        <span className="text-xs">Difícil: 25 pontos</span>
-        <span className="text-xs">Pesadelo: 50 pontos</span>
-        <span className="text-xs">Inferno: 100 pontos</span>
+        <span className="text-xs">Difícil: 100 pontos</span>
+        <span className="text-xs">Pesadelo: 500 pontos</span>
+        <span className="text-xs">Inferno: 1000 pontos</span>
       </div>
       <h2 className="text-2xl mb-4">Escolha a dificuldade do jogo</h2>
       <div className="flex space-x-4 justify-around">

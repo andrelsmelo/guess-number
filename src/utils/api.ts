@@ -42,9 +42,9 @@ export async function sendScore(user: string, difficulty: string) {
     }
 
     const difficultyMultipliers: { [key: string]: number } = {
-      i: 100,
-      p: 50,
-      d: 25,
+      i: 1000,
+      p: 500,
+      d: 100,
       m: 10,
       f: 5,
     }
