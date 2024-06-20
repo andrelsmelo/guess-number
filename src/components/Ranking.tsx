@@ -88,14 +88,14 @@ export default function Ranking() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-0 left-0 bg-white px-8 py-4 h-2/5 flex flex-col justify-start items-center rounded-br-lg shadow-lg"
+            className="fixed top-0 left-0 bg-white px-8 py-4 h-2/3 flex flex-col justify-start items-center rounded-br-lg shadow-lg"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.3 }}
           >
             <h2 className="mb-8">Ranking</h2>
-            <ol>
+            <ol className="overflow-y-scroll">
               {rows.map((row) => (
                 <li key={row.username}>
                   {row.username}: {row.qtd}
