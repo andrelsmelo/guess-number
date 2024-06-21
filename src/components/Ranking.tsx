@@ -88,7 +88,7 @@ export default function Ranking() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-0 left-0 bg-white px-8 py-4 h-2/3 flex flex-col justify-start items-center rounded-br-lg shadow-lg"
+            className="fixed top-0 left-0 bg-white text-black p-4 h-2/3 flex flex-col justify-start items-center rounded-br-lg shadow-lg"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
