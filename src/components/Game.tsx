@@ -8,6 +8,7 @@ import { GameMessages } from '@/utils/messages'
 import { sendScore } from '@/utils/api'
 import { Bounce, toast } from 'react-toastify'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Game = () => {
   const [difficulty, setDifficulty] = useState<string>('')
@@ -149,26 +150,7 @@ const Game = () => {
                 </Link>
               </h2>
               <div className="flex w-screen justify-center items-center">
-                <div
-                  className="tenor-gif-embed"
-                  data-postid="20285627"
-                  data-share-method="host"
-                  data-aspect-ratio="1.77778"
-                  data-width="600px"
-                >
-                  <a href="https://tenor.com/view/yba-winning-comp-sbr-winning-sbr-gif-20285627">
-                    Yba Winning Comp Sbr Sticker
-                  </a>
-                  from{' '}
-                  <a href="https://tenor.com/search/yba-stickers">
-                    Yba Stickers
-                  </a>
-                </div>{' '}
-                <script
-                  type="text/javascript"
-                  async
-                  src="https://tenor.com/embed.js"
-                ></script>
+                <Image src="/cat.png" alt="Gato comemorando" fill />
               </div>
               <Button variant="primary" className="mt-4" onClick={resetGame}>
                 Reiniciar Jogo
