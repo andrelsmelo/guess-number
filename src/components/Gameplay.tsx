@@ -121,9 +121,9 @@ const Gameplay: FC<Props> = ({
         </div>
       ) : (
         <>
-          <h1>{message}</h1>
+          <h1 className="text-white text-9xl">F</h1>
           <div className="flex justify-around w-screen">
-            <Image src="/pepe.png" alt="lost" fill />
+            <Image src="/pepe.png" alt="lost" width={300} height={300} />
           </div>
         </>
       )}

@@ -150,7 +150,12 @@ const Game = () => {
                 </Link>
               </h2>
               <div className="flex w-screen justify-center items-center">
-                <Image src="/cat.png" alt="Gato comemorando" fill />
+                <Image
+                  src="/cat.png"
+                  alt="Gato comemorando"
+                  width={300}
+                  height={300}
+                />
               </div>
               <Button variant="primary" className="mt-4" onClick={resetGame}>
                 Reiniciar Jogo
