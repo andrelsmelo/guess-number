@@ -25,7 +25,7 @@ const Game = () => {
       'No dia 1º de cada mês, o primeiro colocado receberá uma premiação em PIX equivalente à quantidade de pontos convertida de pesos chilenos 🇨🇱 para reais. 💸🤑💰',
       {
         position: 'bottom-center',
-        autoClose: 10000,
+        autoClose: 5000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -49,7 +49,7 @@ const Game = () => {
       'Faça login para aparecer no painel de classificação e concorrer ao prêmio mensal em PIX!',
       {
         position: 'bottom-right',
-        autoClose: false,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
