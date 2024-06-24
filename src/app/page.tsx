@@ -2,48 +2,15 @@ import Button from '@/components/Button'
 import Game from '@/components/Game'
 import Never from '@/components/Never'
 import Ranking from '@/components/Ranking'
+import LoginIcon from '@/components/icons/Login'
 import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative px-4 py-4">
       <Link href="/login">
-        <Button variant="success" className="fixed right-0 bottom-0">
-          {' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 256"
-            className="w-4 h-4"
-          >
-            <rect width="256" height="256" fill="none" />
-            <line
-              x1="24"
-              y1="128"
-              x2="136"
-              y2="128"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-            <polyline
-              points="96 88 136 128 96 168"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-            <polyline
-              points="136 40 200 40 200 216 136 216"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-          </svg>{' '}
+        <Button variant="transparent" className="fixed right-0 bottom-0">
+          <LoginIcon />
         </Button>
       </Link>
       <Never />

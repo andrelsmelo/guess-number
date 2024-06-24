@@ -2,6 +2,7 @@
 
 import Button from '@/components/Button'
 import { useState } from 'react'
+import QuestionIcon from './icons/Question'
 
 const Never = () => {
   const [iframe, setIframe] = useState(false)
@@ -30,11 +31,11 @@ const Never = () => {
   return (
     <main className="relative">
       <Button
-        variant="secondary"
+        variant="transparent"
         className="fixed right-0 top-0 bg-transparent hover:bg-transparent hover:scale-125"
         onClick={handleClick}
       >
-        ?
+        <QuestionIcon />
       </Button>
       {iframe && (
         <iframe

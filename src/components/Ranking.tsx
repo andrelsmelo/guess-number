@@ -3,6 +3,7 @@ import { getRanking } from '@/utils/api'
 import { useEffect, useState } from 'react'
 import Button from './Button'
 import { motion, AnimatePresence } from 'framer-motion'
+import { TrophyIcon } from './icons/Trophy'
 
 interface RankingData {
   username: string
@@ -32,57 +33,8 @@ export default function Ranking() {
   return (
     <div className="fixed top-0 left-0">
       {!isOpen && (
-        <Button variant="secondary" className="m-1" onClick={toggleModal}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 256"
-            className="w-6 h-6"
-          >
-            <rect width="256" height="256" fill="none" />
-            <path
-              d="M32,208V104a8,8,0,0,1,8-8H88"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-            <path
-              d="M88,208V56a8,8,0,0,1,8-8h64a8,8,0,0,1,8,8V208"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-            <path
-              d="M224,208V144a8,8,0,0,0-8-8H168"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-            <polyline
-              points="120 100 132 96 132 136"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-            <line
-              x1="16"
-              y1="208"
-              x2="240"
-              y2="208"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="16"
-            />
-          </svg>
+        <Button variant="transparent" className="m-1" onClick={toggleModal}>
+          <TrophyIcon />
         </Button>
       )}
       <AnimatePresence>
