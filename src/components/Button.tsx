@@ -10,6 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'danger'
     | 'error'
     | 'black'
+    | 'transparent'
   className?: string
 }
 
@@ -21,6 +22,7 @@ const variantClasses = {
   danger: 'bg-red-600 hover:bg-red-700 text-white',
   error: 'bg-red-800 hover:bg-red-900 text-white',
   black: 'bg-black hover:bg-gray-900 text-white border border-gray-800',
+  transparent: 'bg-transparent text-white',
 }
 
 const Button: FC<ButtonProps> = ({
