@@ -22,52 +22,9 @@ const Game = () => {
     useState<boolean>(false)
 
   useEffect(() => {
-    toast.info(
-      'No dia 1º de cada mês, o primeiro colocado receberá uma premiação em PIX equivalente à quantidade de pontos convertida de pesos chilenos 🇨🇱 para reais. 💸🤑💰',
-      {
-        position: 'bottom-center',
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        transition: Bounce,
-        icon: false,
-        style: {
-          backgroundColor: '#000',
-          color: '#fff',
-          textAlign: 'center',
-          marginBottom: '85px',
-        },
-      },
-    )
     const loggedUser = sessionStorage.getItem('username')
 
     if (loggedUser) return
-
-    toast.success(
-      'Faça login para aparecer no painel de classificação e concorrer ao prêmio mensal em PIX!',
-      {
-        position: 'bottom-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        transition: Bounce,
-        icon: false,
-        style: {
-          marginBottom: '20px',
-          backgroundColor: '#38A169',
-          color: '#fff',
-        },
-        onClick: () => {
-          window.location.href = '/login'
-        },
-      },
-    )
   }, [])
 
   const startGame = (selectedDifficulty: string) => {
